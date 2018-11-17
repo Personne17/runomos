@@ -55,7 +55,7 @@ client.on("message", msg => {
   let prefix = "$";
   let messageArray = msg.content.split(" ");
   let command = messageArray[0].toLowerCase();
-  let guild = client.guilds.get(settings.guildID);
+  let guild = client.guilds.get("513343745735917614");
   if (!command.startsWith(prefix)) return;
 
   let args = messageArray.slice(1);
