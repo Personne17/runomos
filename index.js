@@ -55,12 +55,12 @@ client.on("message", msg => {
   let prefix = "$";
   let messageArray = msg.content.split(" ");
   let command = messageArray[0].toLowerCase();
-
+  let guild = client.guilds.get(settings.guildID);
   if (!command.startsWith(prefix)) return;
 
   let args = messageArray.slice(1);
   let cmd = client.commands.get(command.slice(prefix.length));
-  if (cmd) cmd.run(client, msg, args);
+  if (cmd) cmd.run(client, msg, args, guild);
 });
 
 client.login("NTEzNDE1MjE5OTIyMzM3Nzk4.DtHqyg.DNBfu9Bqb1Z27qhUos9S2LcLIjo");

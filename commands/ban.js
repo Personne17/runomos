@@ -1,7 +1,7 @@
 
 const Discord = require("discord.js");
 
-module.exports.run = (bot, msg, args) => {
+module.exports.run = (bot, msg, args, guild) => {
 
         msg.delete();
         if(!msg.member.hasPermission("BAN_MEMBERS")) return;
