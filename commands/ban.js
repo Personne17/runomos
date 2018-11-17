@@ -2,7 +2,8 @@
 const Discord = require("discord.js");
 
 module.exports.run = (bot, msg, args, guild) => {
-
+  var achannel = client.channels.get("513420946523291658")
+      var bchannel = client.channels.get("513387249153474561")
         msg.delete();
         if(!msg.member.hasPermission("BAN_MEMBERS")) return;
           if(args[0] == "help"){
