@@ -4,6 +4,7 @@ const client = new discord.Client({disableEveryone: true});
 const token = process.env.token;
 var ffmpeg = require('ffmpeg');
 var delay = require("timeout-as-promise");
+var up = false;
 
 
 client.on("ready", () => {
