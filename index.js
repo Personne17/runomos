@@ -1,6 +1,5 @@
 const discord = require("discord.js");
 const fs = require("fs");
-const config = require("./config.json");
 const bot = new discord.Client({disableEveryone: true});
 const token = process.env.token;
 var ffmpeg = require('ffmpeg');
