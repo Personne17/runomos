@@ -1,14 +1,14 @@
 const discord = require("discord.js");
 const fs = require("fs");
-const bot = new discord.Client({disableEveryone: true});
+const client = new discord.Client({disableEveryone: true});
 const token = process.env.token;
 var ffmpeg = require('ffmpeg');
 var delay = require("timeout-as-promise");
 
 
-bot.on("ready", () => {
-  console.log(`${bot.user.username} est prêt !`);
-  bot.user.setActivity(`$help | ${bot.guilds.size} serveur(s)`, {type: "WATCHING"})
+client.on("ready", () => {
+  console.log(`${client.user.username} est prêt !`);
+  client.user.setActivity(`$help | ${client.guilds.size} serveur(s)`, {type: "WATCHING"})
   .then(presence => console.log(`Activité : ${presence.game ? presence.game.name : 'none'}`))
   .catch(console.error);
 
@@ -22,7 +22,7 @@ bot.on("ready", () => {
 });
 
 // Load commands
-bot.commands = new discord.Collection();
+client.commands = new discord.Collection();
 fs.readdir("./commands/", (err, files) => {
   if (err) console.error(err);
   let jsfiles = files.filter(f => f.split(".").pop() === "js");
@@ -33,7 +33,7 @@ fs.readdir("./commands/", (err, files) => {
   jsfiles.forEach((f, i) => {
     let props = require(`./commands/${f}`);
     console.log(`${i + 1}: ${f} chargée !`);
-    bot.commands.set(props.help.name, props);
+    client.commands.set(props.help.name, props);
   });
 });
 
@@ -48,7 +48,7 @@ client.on("guildMemberRemove", mr => {
 })
 
 
-bot.on("message", msg => {
+client.on("message", msg => {
   if (msg.author.bot) return;
   if (msg.channel.type === "dm") return;
   let prefix = "$";
@@ -58,8 +58,8 @@ bot.on("message", msg => {
   if (!command.startsWith(prefix)) return;
 
   let args = messageArray.slice(1);
-  let cmd = bot.commands.get(command.slice(prefix.length));
-  if (cmd) cmd.run(bot, message, args);
+  let cmd = client.commands.get(command.slice(prefix.length));
+  if (cmd) cmd.run(client, message, args);
 });
 
-bot.login("NTEzNDE1MjE5OTIyMzM3Nzk4.DtHqyg.DNBfu9Bqb1Z27qhUos9S2LcLIjo");
+client.login("NTEzNDE1MjE5OTIyMzM3Nzk4.DtHqyg.DNBfu9Bqb1Z27qhUos9S2LcLIjo");
