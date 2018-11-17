@@ -60,7 +60,7 @@ client.on("message", msg => {
 
   let args = messageArray.slice(1);
   let cmd = client.commands.get(command.slice(prefix.length));
-  if (cmd) cmd.run(client, message, args);
+  if (cmd) cmd.run(client, msg, args);
 });
 
 client.login("NTEzNDE1MjE5OTIyMzM3Nzk4.DtHqyg.DNBfu9Bqb1Z27qhUos9S2LcLIjo");
