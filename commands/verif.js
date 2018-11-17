@@ -1,7 +1,7 @@
 
 const Discord = require("discord.js"); //acces a la librairie discord
 
-module.exports.run = (bot, msg, args, guild) => {
+module.exports.run = (client, msg, args, guild) => {
 
   if(guild.me.hasPermission("MANAGE_CHANNELS")) { // Si le bot a la permission de supprimer les messages
       msg.delete(); //supprime le message d'invocation

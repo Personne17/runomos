@@ -1,7 +1,7 @@
 
 const Discord = require("discord.js");
 
-module.exports.run = (bot, msg, args, guild) => {
+module.exports.run = (client, msg, args, guild) => {
   var achannel = client.channels.get("513420946523291658")
       var bchannel = client.channels.get("513387249153474561")
         msg.delete();
