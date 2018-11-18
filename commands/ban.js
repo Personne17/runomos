@@ -5,7 +5,6 @@ var delay = require("timeout-as-promise")
 
 module.exports.run = (client, msg, args, guild) => {
       const bchannel = client.channels.get("513387249153474561");
-      if(msg.channel == bchannel) {
         var achannel = client.channels.get("513420946523291658")
 
         if(!msg.member.hasPermission("BAN_MEMBERS")) return;
@@ -44,8 +43,6 @@ module.exports.run = (client, msg, args, guild) => {
 
           incidentchannel.send(banEmbed);
         });
-
-      }
 }
 module.exports.help = {
   name: "ban"

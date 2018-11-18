@@ -6,6 +6,8 @@ var ffmpeg = require('ffmpeg');
 var delay = require("timeout-as-promise");
 var up = false;
 
+var blacklist = [419096825270763521]
+
 
 client.on("ready", () => {
   console.log(`${client.user.username} est prêt !`);
@@ -39,7 +41,17 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.on("guildMemberAdd", m => {
+
     let bbchannel = client.channels.get("513343745735917616")
+
+    for i = 0, i < blacklist.length, i++ {
+      var blacklist1 = parseInt(blacklist[i]);
+      if(m.id == blacklist1) {
+        m.send("Vous avez été automatiquement détécté comme 'CANCER'.")
+        bbchannel.send(m + "a été banni car il est sur la blacklist. Son ID est : " + blacklist1)
+        m.ban();
+      }
+    }
     bbchannel.send("Hey ! " + m + " Bienvenue sur : :white_large_square::arrow_right:SERVEUR COOL:arrow_left::white_large_square: !")
 })
 
