@@ -2,9 +2,10 @@
 const Discord = require("discord.js");
 
 module.exports.run = (client, msg, args, guild) => {
-      var bchannel = client.channels.get("513387249153474561");
+      const bchannel = client.channels.get("513387249153474561");
       if(msg.channel == bchannel) {
-      var achannel = client.channels.get("513420946523291658")
+        var achannel = client.channels.get("513420946523291658")
+
         if(!msg.member.hasPermission("BAN_MEMBERS")) return;
           if(args[0] == "help"){
           bchannel.send("Uttilisation: !ban <utilisateur> <raison> (temps)");
@@ -40,15 +41,14 @@ module.exports.run = (client, msg, args, guild) => {
         bUser.send(bReason);
 
 
-                if(!mutetime) return;
-                setTimeout(function(){
-                  guild.unban(bUser.id, 'Temps terminé');
-                  incidentchannel.send(`<@${bUser.id}> vient d'être unban !!`);
-                }, ms(mutetime));
-              }
-
-      }
+        if(!mutetime) return;
+          setTimeout(function(){
+            guild.unban(bUser.id, 'Temps terminé');
+            incidentchannel.send(`<@${bUser.id}> vient d'être unban !!`);
+          }, ms(mutetime));
+  }
 }
+
 module.exports.help = {
   name: "ban"
 }
