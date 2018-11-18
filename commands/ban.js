@@ -13,7 +13,7 @@ module.exports.run = (client, msg, args, guild) => {
         }
 
         let bUser = guild.member(msg.mentions.users.first() || guild.members.get(args[0]));
-        if(!bUser) return bchannel.send("C'est qui lui ? Il existe pas :thinking: !");
+        if(!bUser) return bchannel.send("C'est qui lui ? Il existe pas <:thonking:513460071477280798> !");
         if(bUser.id === client.user.id) return bchannel.send("Je ne peut pas me ban moi-même :joy:");
         let bReason = args.join(" ").slice(22);
         if(!bReason) return bchannel.send(`Ah tu veut ban ${bUser} ? C'est quoi ta raison :joy:?`);

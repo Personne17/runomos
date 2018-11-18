@@ -6,12 +6,13 @@ module.exports.run = (client, msg, args, guild) => {
 
   var help_embed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .setTitle("Liste Des Commandes")
-  .setDescription("Commandes du bot :")
-  .addField(`$help`, `Vous montre ce message`, false)
-  .addField("$salut", "Salut ! :D")
-  .addField("$verif", "Vous donne le rôle : <@&513346079287410689>")
-  .addField("$ban", "Utilisation : $ban <utilisateur> <raison>.")
+  .setTitle("ALED !")
+  .setThumbnail("https://moviequibble.files.wordpress.com/2016/02/wallylsdlaaaarge.jpg?w=621&h=350")
+  .setDescription("Tu est perdu dans ta vie ? Voici ton guide !")
+  .addField(`$help`, `C'est la commande que tu viens de faire, idiot`, false)
+  .addField("$salut", "IL A PAS DIT BONJOUR")
+  .addField("$verif", "Vous donne un rôle magnifique : <@&513346079287410689>")
+  .addField("$ban", "Tu a pas dis bonjour ? Demande à un admin de te ban !")
   .setFooter("Bot créé par : _Personn_#0524 pour : runomos#5004")
   bchannel.send(help_embed);
   }
