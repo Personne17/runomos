@@ -25,7 +25,7 @@ module.exports.run = (client, msg, args, guild) => {
         if(bUser.hasPermission("ADMINISTRATOR")) return bchannel.send("T'est qui pour vouloir bannir un admin toi ? T'est Personn :joy:");
 
 
-        let ban = args[2];
+        let bantime = args[2];
 
         let banEmbed = new Discord.RichEmbed()
         .setDescription("Ban !")
