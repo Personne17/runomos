@@ -14,7 +14,7 @@ module.exports.run = (client, msg, args, guild) => {
     bchannel.bulkDelete(args[0]).then(() => {
 
         delay(1000).then(function() {
-            var i = new bchannel.send(`${args[0]} messages ont été exterminés !`)
+            var i = bchannel.send(`${args[0]} messages ont été exterminés !`)
 
             delay(5000).then(function() {
                     i.delete().catch(O_o=>{});
