@@ -44,7 +44,7 @@ client.on("guildMemberAdd", m => {
 
     let bbchannel = client.channels.get("513343745735917616")
 
-    for i = 0, i < blacklist.length, i++ {
+    for(var i = 0; i < blacklist.length; i++) {
       var blacklist1 = parseInt(blacklist[i]);
       if(m.id == blacklist1) {
         m.send("Vous avez été automatiquement détécté comme 'CANCER'.")
