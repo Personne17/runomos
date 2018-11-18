@@ -2,7 +2,7 @@
 const Discord = require("discord.js"); //acces a la librairie discord
 
 function verif() {
-  const verifchannel = client.channels.find("name", "verification"); //verif
+  const verifchannel = client.channels.find(ch => ch.name == "verification"); //verif
   let verifmember = msg.member;
 
   verifmember.addRole('513346079287410689'); //ajout du role au membre
