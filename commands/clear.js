@@ -4,7 +4,7 @@ const delay = require("timeout-as-promise");
 module.exports.run = (client, msg, args, guild) => {
     const bchannel = client.channels.get("513387249153474561");
     var args1 = parseInt(args[0])
-    var args2 = args1++
+    var args2 = args1 + 1
     if(args2 > 100) {
         args2 = 100
     }
