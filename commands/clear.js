@@ -22,11 +22,11 @@ module.exports.run = (client, msg, args, guild) => {
     bchannel.bulkDelete(args2).then(() => {
 
         delay(1000).then(function() {
-            var i = bchannel.send(`${args[0]} messages ont été exterminés !`)
+            var i = msg.channel.send(`${args[0]} messages ont été exterminés !`)
         })
 
         delay(3000).then(function() {
-        bchannel.bulkDelete(1).catch(console.error);
+        msg.channel.bulkDelete(1).catch(console.error);
         });
 
         return;
