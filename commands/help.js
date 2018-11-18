@@ -13,6 +13,8 @@ module.exports.run = (client, msg, args, guild) => {
   .addField(`$help`, `C'est la commande que tu viens de faire, idiot`, false)
   .addField("$salut", "IL A PAS DIT BONJOUR")
   .addField("$verif", "Vous donne un rôle magnifique : <@&513346079287410689>")
+  .addField("$createur", ":O")
+  .addField("$say", "Vous n'avez pas d'amis ? Parlez avec le bot !")
   .addField("$clear", "Gotta SWEEP SWEEP SWEEP")
   .addField("$ban", "Tu a pas dis bonjour ? Demande à un admin de te ban !")
   .setFooter("Bot créé par : _Personn_#0524 pour : runomos#5004")

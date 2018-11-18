@@ -4,7 +4,7 @@ module.exports.run = (client, msg, args, guild) => {
 
       const sayMessage = args.join(" ");
       msg.delete().catch();
-      message.channel.send(sayMessage);
+      msg.channel.send(sayMessage);
 
 }
 module.exports.help = {
