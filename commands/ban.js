@@ -1,5 +1,6 @@
 
 const Discord = require("discord.js");
+const ms = require("ms")
 
 module.exports.run = (client, msg, args, guild) => {
       const bchannel = client.channels.get("513387249153474561");
@@ -8,7 +9,7 @@ module.exports.run = (client, msg, args, guild) => {
 
         if(!msg.member.hasPermission("BAN_MEMBERS")) return;
           if(args[0] == "help"){
-          bchannel.send("Uttilisation: !ban <utilisateur> <raison> (temps)");
+          bchannel.send("Utilisation: $ban <utilisateur> <raison> (temps)");
           return;
         }
 
