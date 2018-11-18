@@ -1,8 +1,9 @@
 const Discord = require("discord.js");
 
 module.exports.run = (client, msg, args, guild) => {
-  if(msg.channel == '513387249153474561') {
-  var bchannel = client.channels.get("513387249153474561");
+    var bchannel = client.channels.get("513387249153474561");
+  if(msg.channel == bchannel) {
+
   var help_embed = new Discord.RichEmbed()
   .setColor("RANDOM")
   .setTitle("Liste Des Commandes")
