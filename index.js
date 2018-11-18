@@ -42,7 +42,7 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on("guildMemberAdd", m => {
 
-    let bbchannel = client.channels.find(ch => ch.name = "bienvenue")
+    let bbchannel = client.channels.get("513343745735917616")
 
     for(var i = 0; i < blacklist.length; i++) {
       var blacklist1 = parseInt(blacklist[i]);
@@ -58,7 +58,7 @@ client.on("guildMemberAdd", m => {
 })
 
 client.on("guildMemberRemove", mr => {
-  let rchannel = client.channels.find(ch => ch.name = "bienvenue")
+  let rchannel = client.channels.get("513343745735917616")
   rchannel.send(mr + ", puisse son nom rester à jamais oublié, viens de quitter le serveur. :skull:")
 })
 
