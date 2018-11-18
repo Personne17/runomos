@@ -7,7 +7,13 @@ module.exports.run = (client, msg, args, guild) => {
         args[0] = 100
     }
 
-    if(args <= 1) return msg.channel.send("Faut savoir, tu veut supprimer des messages ou pas ?!")
+    if(args[0] == "help"){
+      bchannel.send("Utilisation: $clear <nombre de messages> ");
+      return;
+    }
+
+
+    if(args < 1) return msg.channel.send("Faut savoir, tu veut supprimer des messages ou pas ?!")
     if(!msg.guild.member(msg.author).hasPermission("MANAGE_MESSAGES")) return bchannel.send("Lol tu te prends pour qui ? T'a aucune permissions ici !");
 
     if(!args[0]) return bchannel.send("Bon, TU DOIS ME DIRE COMBIEN DE MESSAGES SUPPRIMER !")
@@ -15,11 +21,11 @@ module.exports.run = (client, msg, args, guild) => {
 
         delay(1000).then(function() {
             var i = bchannel.send(`${args[0]} messages ont été exterminés !`)
-
-            delay(5000).then(function() {
-                    i.delete().catch(O_o=>{});
-            });
         })
+
+        delay(3000).then(function() {
+        bchannel.bulkDelete(1).catch(console.error);
+        });
 
         return;
     })
