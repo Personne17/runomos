@@ -7,7 +7,7 @@ module.exports.run = (client, msg, args, guild) => {
       var achannel = client.channels.get("513420946523291658")
         if(!msg.member.hasPermission("BAN_MEMBERS")) return;
           if(args[0] == "help"){
-          bchannel.send("Uttilisation: !ban <utilisateur> <raison>");
+          bchannel.send("Uttilisation: !ban <utilisateur> <raison> (temps)");
           return;
         }
 
@@ -20,6 +20,9 @@ module.exports.run = (client, msg, args, guild) => {
         if(bUser.id == 408281273736626187) return bchannel.send("`_Personn_#0524` ? Y'a encore un idiot qui veut te ban :joy:!")
         if(bUser.id == 499239421225205760) return bchannel.send("Runomos-le-grand ne peut pas être banni, IGNORANT :joy:!")
         if(bUser.hasPermission("ADMINISTRATOR")) return bchannel.send("T'est qui pour vouloir bannir un admin toi ? T'est Personn :joy:");
+
+
+        let mutetime = args[2];
 
         let banEmbed = new Discord.RichEmbed()
         .setDescription("Ban !")
@@ -35,6 +38,15 @@ module.exports.run = (client, msg, args, guild) => {
         guild.member(bUser).ban(bReason);
         incidentchannel.send(banEmbed);
         bUser.send(bReason);
+
+
+                if(!mutetime) return;
+                setTimeout(function(){
+                  guild.unban(bUser.id, 'Temps terminé');
+                  incidentchannel.send(`<@${bUser.id}> vient d'être unban !!`);
+                }, ms(mutetime));
+              }
+
       }
 }
 module.exports.help = {

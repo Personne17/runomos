@@ -9,8 +9,10 @@ module.exports.run = (client, msg, args, guild) => {
   .setTitle("Liste Des Commandes")
   .setDescription("Commandes du bot :")
   .addField(`$help`, `Vous montre ce message`, false)
+  .addField("$salut", "Salut ! :D")
   .addField("$verif", "Vous donne le rôle : <@&513346079287410689>")
   .addField("$ban", "Utilisation : $ban <utilisateur> <raison>.")
+  .setFooter("Bot créé par : _Personn_#0524 pour : runomos#5004")
   bchannel.send(help_embed);
   }
 }
