@@ -10,10 +10,9 @@ module.exports.run = (client, message, args, guild) => {
             .setDescription("Tout ce qu'il y a à savoir sur le serveur.")
             .addField("Nom du serveur :", guild.name, true)
             .addField("Serveur créé le :", guild.createdAt, true)
-            .addField("Nombre de salons :", msg.guild.channels.size, true)
+            .addField("Nombre de salons :", guild.channels.size, true)
             .addField("Nombre de membres sur le serveur :", guild.memberCount, true)
             .addField("Id du fondateur :", guild.ownerID, true)
-            .addField("Vous avez rejoint ce serveur le :", msg.author.guild.joinedAt, true)
             .setFooter("Bot créé par _Personn_#0524.")
 
         msg.channel.send(si_embed)
