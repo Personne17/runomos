@@ -10,7 +10,7 @@ module.exports.run = (client, msg, args, guild) => {
 
         if(!msg.member.hasPermission("BAN_MEMBERS")) return;
           if(args[0] == "help"){
-          bchannel.send("Utilisation: $ban <utilisateur> <raison> (temps)");
+          bchannel.send("Utilisation: $ban <utilisateur> <raison> ");
           return;
         }
 
@@ -24,16 +24,12 @@ module.exports.run = (client, msg, args, guild) => {
         if(bUser.id == 499239421225205760) return bchannel.send("Runomos-le-grand ne peut pas être banni, IGNORANT :joy:!")
         if(bUser.hasPermission("ADMINISTRATOR")) return bchannel.send("T'est qui pour vouloir bannir un admin toi ? T'est Personn :joy:");
 
-
-        let bantime = args[2];
-
         let banEmbed = new Discord.RichEmbed()
         .setDescription("Ban !")
         .setColor("#bc0000")
         .addField("Utilisateur Banni : ", `${bUser.username} avec l'id : ${bUser.id}`)
         .addField("Banni par : ", `<@${msg.author.username}> avec l'id : ${msg.author.id}`)
         .addField("Banni dans : ", `${msg.channel.name}`)
-        .addField("Pendant : " + bantime)
         .addField("A :", msg.createdAt)
         .addField("Raison :", bReason);
 
@@ -43,20 +39,11 @@ module.exports.run = (client, msg, args, guild) => {
           bUser.send(bReason);
         });
 
-        delay(10).then(function() {
+        delay(2000).then(function() {
           guild.member(bUser).ban(bReason);
 
           incidentchannel.send(banEmbed);
         });
-
-
-
-        if(!bantime) return;
-          setTimeout(function(){
-            guild.unban(bUser.id, 'Temps terminé');
-            incidentchannel.send(`<@${bUser.id}> vient d'être unban !!`);
-          }, ms(bantime));
-  }
 }
 
 module.exports.help = {
