@@ -12,7 +12,7 @@ var blacklist = [419096825270763521]
 client.on("ready", () => {
   console.log(`${client.user.username} est prêt !`);
   client.user.setActivity(`$help | ${client.guilds.size} serveur(s)`, {type: "WATCHING"})
-  .then(presence => console.log(`Activité : ${presence.game ? presence.game.name : 'none'}`))
+  .then(presence => console.log(`Activité : ${presence.game ? presence.game.name : 'none'}`)) // Si la variable presence.game existe, ça retourne presence.game.name, sinon si presence.game n'xiste pas , ça retourne "none"
   .catch(console.error);
 
   while(up === true) {
