@@ -8,7 +8,7 @@ module.exports.run = (client, msg, args, guild) => {
       return;
     }
     let kUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
-    if(!kUser) return message.reply("C'est qui celui là ? Bah c'est Personne.");
+    if(!kUser) return msg.reply("C'est qui celui là ? Bah c'est Personne.");
     let kReason = args.join(" ").slice(22);
     if(kUser.hasPermission("MANAGE_MESSAGES")) return msg.reply("WTF! IL A PLUS DE PERMISSIONS QUE MOI");
 
