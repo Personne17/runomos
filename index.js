@@ -6,7 +6,7 @@ var ffmpeg = require('ffmpeg');
 var delay = require("timeout-as-promise");
 var up = false;
 
-var blacklist = [419096825270763521]
+var blacklist = [419096825270763521, 365975655608745985]
 
 
 client.on("ready", () => {
