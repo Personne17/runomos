@@ -18,8 +18,8 @@ module.exports.run = (client, msg, args, guild) => {
     if(args < 1) return msg.channel.send("Faut savoir, tu veut supprimer des messages ou pas ?!")
     if(!msg.guild.member(msg.author).hasPermission("MANAGE_MESSAGES")) return bchannel.send("Lol tu te prends pour qui ? T'a aucune permissions ici !");
 
-    if(!args[0]) return bchannel.send("Bon, TU DOIS ME DIRE COMBIEN DE MESSAGES SUPPRIMER !")
-    bchannel.bulkDelete(args[0]).then(() => {
+    if(!args2) return bchannel.send("Bon, TU DOIS ME DIRE COMBIEN DE MESSAGES SUPPRIMER !")
+    bchannel.bulkDelete(args2).then(() => {
 
         delay(1000).then(function() {
             var i = bchannel.send(`${args[0]} messages ont été exterminés !`)
