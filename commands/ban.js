@@ -1,6 +1,7 @@
 
 const Discord = require("discord.js");
 const ms = require("ms")
+var delay = require("timeout-as-promise")
 
 module.exports.run = (client, msg, args, guild) => {
       const bchannel = client.channels.get("513387249153474561");
@@ -24,29 +25,37 @@ module.exports.run = (client, msg, args, guild) => {
         if(bUser.hasPermission("ADMINISTRATOR")) return bchannel.send("T'est qui pour vouloir bannir un admin toi ? T'est Personn :joy:");
 
 
-        let mutetime = args[2];
+        let ban = args[2];
 
         let banEmbed = new Discord.RichEmbed()
         .setDescription("Ban !")
         .setColor("#bc0000")
-        .addField("Utilisateur Banni :", `${bUser.username} avec l'id : ${bUser.id}`)
-        .addField("Banni par :", `<@${msg.author.username}> avec l'id : ${msg.author.id}`)
-        .addField("Banni dans :", `${msg.channel.name}`)
+        .addField("Utilisateur Banni : ", `${bUser.username} avec l'id : ${bUser.id}`)
+        .addField("Banni par : ", `<@${msg.author.username}> avec l'id : ${msg.author.id}`)
+        .addField("Banni dans : ", `${msg.channel.name}`)
+        .addField("Pendant : " + bantime)
         .addField("A :", msg.createdAt)
         .addField("Raison :", bReason);
 
         let incidentchannel = client.channels.get("513354844564881430");
 
-        guild.member(bUser).ban(bReason);
-        incidentchannel.send(banEmbed);
-        bUser.send(bReason);
+        delay().then(function() {
+          bUser.send(bReason);
+        });
+
+        delay(10).then(function() {
+          guild.member(bUser).ban(bReason);
+
+          incidentchannel.send(banEmbed);
+        });
 
 
-        if(!mutetime) return;
+
+        if(!bantime) return;
           setTimeout(function(){
             guild.unban(bUser.id, 'Temps terminé');
             incidentchannel.send(`<@${bUser.id}> vient d'être unban !!`);
-          }, ms(mutetime));
+          }, ms(bantime));
   }
 }
 
