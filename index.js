@@ -76,5 +76,6 @@ client.on("message", msg => {
   let cmd = client.commands.get(command.slice(prefix.length));
   if (cmd) cmd.run(client, msg, args, guild);
 });
+client.on('error', console.error);
 
 client.login("NTEzNDE1MjE5OTIyMzM3Nzk4.DtHqyg.DNBfu9Bqb1Z27qhUos9S2LcLIjo");

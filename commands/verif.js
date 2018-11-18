@@ -1,6 +1,6 @@
 
 const Discord = require("discord.js"); //acces a la librairie discord
-
+var delay = require("timeout-as-promise")
 
 module.exports.run = (client, msg, args, guild) => {
 
@@ -12,15 +12,15 @@ module.exports.run = (client, msg, args, guild) => {
       verif();
   }
   function verif() {
-  const verifchannel = client.channels.find(ch => ch.name == "verification"); //verif
-  let verifmember = msg.member;
+    const verifchannel = client.channels.find(ch => ch.name == "verification"); //verif
+    let verifmember = msg.member;
 
-  verifmember.addRole('513346079287410689'); //ajout du role au membre
+    verifmember.addRole('513346079287410689'); //ajout du role au membre
 
-  verifchannel.send(`Bienvenue sur le serveur, \`${msg.author.username}\``); //envoi du message de conirmation
+    verifchannel.send(`Bienvenue sur le serveur, \`${msg.author.username}\``); //envoi du message de conirmation
+  }
+  
 }
-}
-
 module.exports.help = {
   name: "verif"
 }

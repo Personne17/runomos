@@ -13,7 +13,7 @@ module.exports.run = (client, message, args, guild) => {
             .addField("Nombre de salons :", guild.channels.size, true)
             .addField("Nombre de membres sur le serveur :", guild.memberCount, true)
             .addField("Id du fondateur :", guild.ownerID, true)
-            .addField("Nom :", guild.owner.username, true)
+            .addField("Nom :", guild.owner.nickname, true)
             .setFooter("Bot créé par _Personn_#0524.")
 
         msg.channel.send(si_embed)
