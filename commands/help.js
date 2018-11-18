@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 
 module.exports.run = (client, msg, args, guild) => {
+  if(msg.channel == '513387249153474561') {
   var bchannel = client.channels.get("513387249153474561");
   var help_embed = new Discord.RichEmbed()
   .setColor("RANDOM")
@@ -9,7 +10,8 @@ module.exports.run = (client, msg, args, guild) => {
   .addField(`$help`, `Vous montre ce message`, false)
   .addField("$verif", "Vous donne le rôle : <@&513346079287410689>")
   .addField("$ban", "Utilisation : $ban <utilisateur> <raison>.")
-bchannel.send(help_embed);
+  bchannel.send(help_embed);
+  }
 }
 module.exports.help = {
   name: "help"
