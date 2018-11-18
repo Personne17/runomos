@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const delay = require("timeout-as-promise");
 
-module.exports.run = (bot, msg, args) => {
+module.exports.run = (client, msg, args, guild) => {
     const bchannel = client.channels.get("513387249153474561");
     if(args > 100) {
         args[0] = 100
