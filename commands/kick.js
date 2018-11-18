@@ -38,8 +38,6 @@ module.exports.run = (client, msg, args, guild) => {
         bUser.send(bReason);
         guild.member(bUser).ban(bReason);
         incidentchannel.send(banEmbed);
-
-
 }
 module.exports.help = {
   name: "kick"
