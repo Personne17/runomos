@@ -24,8 +24,8 @@ module.exports.run = (client, msg, args, guild) => {
         let banEmbed = new Discord.RichEmbed()
         .setDescription("Ban !")
         .setColor("#bc0000")
-        .addField("Utilisateur Banni :", `${bUser.nickname} avec l'id : ${bUser.id}`)
-        .addField("Banni par :", `<@${msg.author.nickname}> avec l'id : ${msg.author.id}`)
+        .addField("Utilisateur Banni :", `${bUser.username} avec l'id : ${bUser.id}`)
+        .addField("Banni par :", `<@${msg.author.username}> avec l'id : ${msg.author.id}`)
         .addField("Banni dans :", `${msg.channel.name}`)
         .addField("A :", msg.createdAt)
         .addField("Raison :", bReason);
