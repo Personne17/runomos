@@ -10,6 +10,7 @@ module.exports.run = (client, msg, args, guild) => {
     let kUser = msg.guild.member(msg.mentions.users.first() || msg.guild.members.get(args[0]));
     if(!kUser) return msg.reply("C'est qui celui là ? Bah c'est Personne.");
     let kReason = args.join(" ").slice(22);
+    if(kUser.id = client.id) return msg.reply("Tu sais que je ne peut pas me kick moi même hein ? Ca créérait un paradoxe dans l'espace temps qui ferait revenir l'univers à 0 à l'infini.")
     if(kUser.hasPermission("MANAGE_MESSAGES")) return msg.reply("WTF! IL A PLUS DE PERMISSIONS QUE MOI");
 
     let kickEmbed = new Discord.RichEmbed()

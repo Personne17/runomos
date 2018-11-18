@@ -17,6 +17,7 @@ module.exports.run = (client, msg, args, guild) => {
   .addField("$say", "Vous n'avez pas d'amis ? Mieux qu'un curly, parlez avec le bot !")
   .addField("$si", "Vous-vous demandez ce qu'est ce serveur ? Voici la réponse !")
   .addField("$clear", "Gotta SWEEP SWEEP SWEEP")
+  .addField("$kick", "$ban est BEAUCOUP mieux !")
   .addField("$ban", "Tu a pas dis bonjour ? Demande à un admin de te ban !")
   .setFooter("Bot créé par : _Personn_#0524 pour : runomos#5004")
   bchannel.send(help_embed);
