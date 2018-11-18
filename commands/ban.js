@@ -44,9 +44,9 @@ module.exports.run = (client, msg, args, guild) => {
 
           incidentchannel.send(banEmbed);
         });
+
       }
 }
-
 module.exports.help = {
   name: "ban"
 }
